@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+    <style>
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-content a:hover, .overlay-content a:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: #fff;
+}
+         body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #141e5491, #243b1591);
+        color: #f0f0f0;
+        line-height: 1.6;
+    }
+
+
+    .card {
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid #ff7e5f;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 20px auto;
+        max-width: 300px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #ff7e5f;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+        background: #feb47b;
+        transform: translateY(-3px);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #111;
+        color: #fff;
+        font-size: 0.9rem;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+      }
+    header {
+        background: linear-gradient(5593deg, #555, #555);
+        color: white;
+        padding: 20px 10px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #111;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        padding: 8px 15px;
+        transition: background 0.3s, color 0.3s;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        background: #444;
+        color: #ff7e5f;
+    }
+
+
+    .card {
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid #ff7e5f;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 20px auto;
+        max-width: 300px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #ff7e5f;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+        background: #feb47b;
+        transform: translateY(-3px);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #111;
+        color: #fff;
+        font-size: 0.9rem;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    }
+        #searchInput {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 2px solid #444;
+            border-radius: 5px;
+            display: block;
+        }
+        #searchResults {
+            width: 10%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid #ff7e5f;
+            border-radius: 5px;
+            display: block;
+            margin-top: 2px;
+        }
+        .result {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .result a {
+            text-decoration: none;
+            color: #444;
+        }
+        .result:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Europe</h1>
+    <div id="navOverlay" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+	<a href="#home">Home</a>
+	<a href="#about">Asia</a>
+	<a href="#products">Africa</a>
+	<a href="#location">North America</a>
+	<a href="#timings">South America</a>
+        <a href="file:///C:/Users/Yuval/Desktop/EXTRAS/New%20folder/website%20project/abcde%20-%20Copy.html">Europe</a>
+        <a href="#contact">Ocean</a>
+        <a href="#contact">Oceania</a>
+        <a href="#feedback">Antarctica</a>
+        </div>
+    </div>
+    <span class="openbtn" onclick="openNav()">&#9776; Menu</span>
+    <script src="scripts.js"></script>  
+
+        <input type="text" id="searchInput" placeholder="Search Oceans names..." onkeyup="searchItems()">
+        <div id="searchResults"></div>
+    </header>
+
+
+    <section id="Albania">
+     <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.MQ1ODfuAoXwRjZ7zHCrvMAHaEK?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">        
+        <h2>Albania</h2>
+        <p><b>President:</b> Bajram Begaj<br>
+<b>Prime Minister:</b> Edi Rama<br>
+<b>Special:</b> Known for its stunning beaches and ancient history.</p>
+ <a href="https://th.bing.com/th/id/R.9d07c943b1d748fd80768b492336ceaf?rik=2QkebrB%2bZNlJQg&riu=http%3a%2f%2fwww.maps-of-europe.net%2fmaps%2fmaps-of-albania%2fdetailed-administrative-map-of-albania.jpg&ehk=DB73v2pPL7%2bev6szW%2fGeQDlNPn1Kf2Ajwn%2bi17qmG3k%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+    </div>
+    </section>
+
+
+    <section id="Andorra">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.b1735ea22a6bde07bc2fdaaaba414a38?rik=%2bazFtN4fpTvF3A&riu=http%3a%2f%2fwww.printableflags.net%2fwp-content%2fuploads%2f2017%2f04%2fandorra-flag-andorra-flag-8-PHqlic.jpg&ehk=gD9Xpq12hKtv6uZjDNUEV0EsUg8%2b%2fPrEiCGYe817%2f4s%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Andorra</h2>
+        <p><b>President:</b> (Co-principality, jointly with the President of France)<br>
+<b>Prime Minister:</b> Xavier Espot<br>
+<b>Special:</b> Known for being a tiny landlocked country in the Pyrenees mountains.</p>
+ <a href="https://www.ezilon.com/maps/images/europe/Andorra-plotical-map.gif" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Armenia">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp4204805.jpg" style="Width:300px; height:200px;">
+        <h2>Armenia</h2>
+        <p><b>President:</b> Vahagn Khachaturyan<br>
+<b>Prime Minister:</b> Nikol Pashinyan<br>
+<b>Special:</b> Known for its ancient Christian heritage and beautiful landscapes.</p>
+ <a href="https://th.bing.com/th/id/R.39eb1a43cab1eeba059afcef4f0516b0?rik=Vjer%2foBwcac1AQ&riu=http%3a%2f%2fwww.ezilon.com%2fmaps%2fimages%2feurope%2fArmenian-political-map.gif&ehk=%2f6SZzqskdD%2be%2bxPXUsBKagu4QhUGQjKEr6ELbnxSL5g%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Austria">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.b454a0f7aa1b8638388e28be4aef8903?rik=US4LlJ2WhDcbVg&riu=http%3a%2f%2fwww.rankflags.com%2fwp-content%2fuploads%2f2015%2f03%2fAustria-Flag1.jpg&ehk=VTdac5e%2b6JABK91XdWddlGnmTLCMG83b2i9nXlKD754%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Austria</h2>
+        <p><b>President:</b> Alexander Van der Bellen<br>
+<b>Prime Minister:</b> Karl Nehammer<br>
+<b>Special:</b> Known for its classical music heritage and alpine scenery.
+Azerbaijan
+</p>
+ <a href="https://geology.com/world/austria-map.gif" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Azerbaijan">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp4204840.jpg" style="Width:300px; height:200px;">
+        <h2>Azerbaijan</h2>
+        <p><b>President:</b> Ilham Aliyev<br>
+<b>Prime Minister:</b> Ali Asadov<br>
+<b>Special:</b> Famous for its oil reserves and the Caspian Sea coastline.</p>
+ <a href="https://th.bing.com/th/id/OIP.9rk3kyJXQonE2un3EGryIwHaFT?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Belarus">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.81ed7e28af5ff3daff7c03223c84080e?rik=g74c3YujWU%2bjDQ&riu=http%3a%2f%2fwonderfulengineering.com%2fwp-content%2fuploads%2f2015%2f07%2fBelarus-flag-1.jpg&ehk=GXDkc9CpmEeHvrsUpp9Uz9XxMM3A0MtHt6sLh6mXT3I%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Belarus</h2>
+        <p><b>President:</b> Alexander Lukashenko<br>
+<b>Prime Minister:</b> Roman Golovchenko<br>
+<b>Special:</b> Known for its Soviet history and dense forests.</p>
+ <a href="https://th.bing.com/th/id/R.577dff789e4f5e9096f7efdb3cbb04f6?rik=6RhfrPd842AeFg&riu=http%3a%2f%2fwww.ezilon.com%2fmaps%2fimages%2feurope%2fBelarus-political-map.gif&ehk=AEdkLkbsMtsOI0WuM2Ho6FDgPCIiDXD0oYgJ91SLm7U%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Belgium">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.FIWK1wrxVQlLFyx6t-8VOgAAAA?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Belgium</h2>
+        <p><b>King:</b> Philippe<br>
+<b>Prime Minister:</b> Alexander De Croo<br>
+<b>Special:</b> Known for its chocolates, waffles, and medieval towns.</p>
+ <a href="https://www.smartraveller.gov.au/sites/default/files/2019-09/belgium-map-1oct2019.png" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Bosnia and Herzegovina">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.7d5e86fab591da062890fd59b9cfd369?rik=w7x46aeiacfS%2bA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-aOyZD4WBuR4%2fU0pzO6QTyLI%2fAAAAAAAAUg4%2fB6HLimD5Z0s%2fs1600%2fFLAG%2bOF%2bBOSNIA%2b-%2bHERZEGOVINA%2bCOLOUR-BENDERA%2bBOSNIA-%2bHERZEGOVINA_3.jpg&ehk=RNQM%2f3MW9Cx54mWk1Hn07Y1qjUu%2fTLcyslPkqQD7UA0%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Bosnia and Herzegovina</h2>
+        <p><b>President:</b> Šefik Džaferović<br>
+<b>Prime Minister:</b> Borjana Krišto<br>
+<b>Special:</b> Known for its Ottoman-era architecture and stunning landscapes.</p>
+ <a href="https://th.bing.com/th/id/OIP.ZMm4cstyfU81xYgwtZucRwHaHa?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Bulgaria">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp4205526.jpg" style="Width:300px; height:200px;">
+        <h2>Bulgaria</h2>
+        <p><b><President:</b> Rumen Radev<br>
+<b>Prime Minister:</b> Nikolai Denkov<br>
+<b>Special:</b> Known for its rich history, rose oil production, and folklore.</p>
+ <a href="https://th.bing.com/th/id/OIP.I19RUhe44v0Di8f5hD7vVAHaFS?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Croatia">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp3650222.jpg" style="Width:300px; height:200px;">
+        <h2>Croatia</h2>
+        <p><b>President:</b> Zoran Milanović<br>
+<b>Prime Minister:</b> Andrej Plenković<br>
+<b>Special:</b> Famous for its beautiful coastline along the Adriatic Sea.</p>
+ <a href="https://th.bing.com/th/id/R.f19cf0c68bc25626538a85c0db86402e?rik=RSwDsFtJGlqFSA&riu=http%3a%2f%2fwww.nationsonline.org%2fmaps%2fcroatia_map.jpg&ehk=wX2N4gYT9qwqaNYa2ap7pnpSIWoRqn9lPbQYmcJwn7g%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Cyprus">
+    <br><br>
+     <div class="card">
+<image src="https://i.pinimg.com/originals/27/c8/37/27c837dc6dec3580a0d23629afea9e1c.jpg" style="Width:300px; height:200px;">
+        <h2>Cyprus</h2>
+        <p><b>President:</b> Nikos Christodoulides<br>
+<b>Prime Minister:</b> None (Cyprus does not have a Prime Minister)<br>
+<b>Special:</b> Known for its Mediterranean beaches and ancient ruins.</p>
+ <a href="https://th.bing.com/th/id/R.40f01fea69d08586eeae4989bf1bb5ee?rik=IKZUntn9Wh1sIQ&riu=http%3a%2f%2fgeology.com%2fworld%2fcyprus-map.gif&ehk=0c9FOYgIW12IPWb6R6iGPPlc2OBUn3OwPTEw9vEkYEI%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Czech Republic (Czechia)">
+    <br><br>
+     <div class="card">
+<image src="https://i.pinimg.com/originals/a7/52/46/a752460084a9ad16e4aa0baf38e47569.jpg" style="Width:300px; height:200px;">
+        <h2>Czech Republic (Czechia)</h2>
+        <p><b>President:</b> Petr Pavel<br>
+<b>Prime Minister:</b> Petr Fiala<br>
+<b>Special:</b> Known for its medieval towns and rich cultural history.</p>
+ <a href="https://geology.com/world/czech-republic-regions-map.gif" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Denmark">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.C22keYJLd-I_xT0lp8NkbgHaEK?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Denmark</h2>
+        <p><b>Queen:</b> Margrethe II<br>
+<b>Prime Minister:</b> Mette Frederiksen<br>
+<b>Special:</b> Famous for its Viking history and modern design.</p>
+ <a href="https://th.bing.com/th/id/OIP.Kzw42OCXN88ilcOH9W1qwwHaIJ?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+ 
+
+    <section id="Estonia">
+    <br><br>
+     <div class="card">
+<image src="https://cdn.wallpapersafari.com/47/29/FEfWVM.jpg" style="Width:300px; height:200px;">
+        <h2>Estonia</h2>
+        <p><b>President:</b> Alar Karis<br>
+<b>Prime Minister:</b> Kaja Kallas<br>
+<b>Special:</b> Known for its digital society and beautiful forests.</p>
+ <a href="https://www.mappr.co/wp-content/uploads/2022/03/Estonia-Politcal-Map-Regions-and-Main-Cities.jpeg" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Finland">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.9a7e2a6fe465da808635624679ae532a?rik=xoynG0h6V89%2fag&riu=http%3a%2f%2fwww.1zoom.me%2fbig2%2f979%2f331352-alexfas01.jpg&ehk=HhpQjPJBnsQRH7fC320i%2bA5dMh8H18iC8KK9ounBEUM%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Finland</h2>
+        <p><b>President:</b> Sauli Niinistö<br>
+<b>Prime Minister:</b> Sanna Marin<br>
+<b>Special:</b> Famous for its natural beauty, lakes, and northern lights.</p>
+ <a href="https://th.bing.com/th/id/OIP.Zf2ny9mzYPzI0Wz68k_FUAAAAA?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="France">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.86d4b9e59b0b28934566e1e193b18d62?rik=I9dLUZFzTKIbFQ&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f190000%2fvelka%2fgrunge-france-flag.jpg&ehk=1y5XE6RgBzTqWhsaGYLXU1T%2fGQ5cfNYhgo5uwteTNN8%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>France</h2>
+        <p><b>President:</b> Emmanuel Macron<br>
+<b>Prime Minister:</b> Élisabeth Borne<br>
+<b>Special:</b> Known for its fashion, cuisine, and the Eiffel Tower.</p>
+ <a href="https://th.bing.com/th/id/OIP.vFysssGgiaa6a3RAxl2oQAHaGy?w=1000&h=916&rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Georgia">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp4210574.jpg" style="Width:300px; height:200px;">
+        <h2>Georgia</h2>
+        <p><b>President:</b> Salome Zourabichvili<br>
+<b>Prime Minister:</b> Irakli Garibashvili<br>
+<b>Special:</b> Famous for its wine production and ancient churches.</p>
+ <a href="https://th.bing.com/th/id/R.621998a8a8c460723159de449564a575?rik=sFsV7SMkjcyNcA&riu=http%3a%2f%2fwww.guideoftheworld.com%2fwp-content%2fuploads%2f2018%2f02%2fgeorgia_us_state_map-e1517608890130.jpg&ehk=QTE6TjyyiCwrcBmY6zqPxqWkZwLdcoP%2fNTIb1d5v6As%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Germany">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.4Qen7yKWE9-sx38KVInRPQHaEL?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Germany</h2>
+        <p><b>President:</b> Frank-Walter Steinmeier<br>
+<b>Chancellor:</b> Olaf Scholz<br>
+<b>Special:</b> Known for its industrial prowess and rich cultural heritage.</p>
+ <a href="https://th.bing.com/th/id/R.40cf6157c9db62a928b299c14547e8e6?rik=Gg2dsNRfstHTpg&riu=http%3a%2f%2fwww.guideoftheworld.com%2fwp-content%2fuploads%2fmap%2fgermany_cities_map.jpg&ehk=Q65i1tPcxjkKk3UEtJLBgcE2VmZ9X6eCHgwvZsAPry8%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+    <section id="Greece">
+    <br><br>
+     <div class="card">
+<image src="https://cdn.wallpapersafari.com/80/74/NtH9kl.jpg" style="Width:300px; height:200px;">
+        <h2>Greece</h2>
+        <p><b>President:</b> Katerina Sakellaropoulou<br>
+<b>Prime Minister:</b> Kyriakos Mitsotakis<br>
+<b>Special:</b> Famous for its ancient ruins and islands.</p>
+ <a href="https://th.bing.com/th/id/OIP.DeSgHctx943AP8QzrAUFUAHaF0?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Hungary">
+    <br><br>
+     <div class="card">
+<image src="https://images5.alphacoders.com/397/thumb-1920-397522.jpg" style="Width:300px; height:200px;">
+        <h2>Hungary</h2>
+        <p><b>President:</b> Katalin Novák<br>
+<b>Prime Minister:</b> Viktor Orbán<br>
+<b>Special:</b> Known for its rich cultural history and stunning architecture</p>
+ <a href="https://cdn.diaocthongthai.com/map/HUN/map_hd_0/atlas-political-map.png" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Iceland">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.OI1kQ3CBeo7kWa7_gmYACQHaEK?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Iceland</h2>
+        <p><b>President:</b> Guðni Th. Jóhannesson<br>
+<b>Prime Minister:</b> Katrín Jakobsdóttir<br>
+<b>Special:</b> Famous for its geothermal energy and stunning landscapes.</p>
+ <a href="https://th.bing.com/th/id/OIP.r37_9rgTI1G1TggRih0sXQHaG6?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Ireland">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp3524097.jpg" style="Width:300px; height:200px;">
+        <h2>Ireland</h2>
+        <p><b>President:</b> Michael D. Higgins<br>
+<b>Prime Minister:</b> Leo Varadkar<br>
+<b>Special:</b> Known for its lush green landscapes and Celtic heritage.</p>
+ <a href="https://i.pinimg.com/736x/af/4b/cb/af4bcb1102bb0500cde83a1be84fcd86.jpg" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Italy">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.08bd077efed5bafefdfa3640e4a3358e?rik=oTQcD2jlhVkMuQ&riu=http%3a%2f%2fonedayinitaly.com%2fwp-content%2fuploads%2f2014%2f05%2fitalian-flag.jpg&ehk=ARDJ4CyXffgtfwkP2gbLe%2bnETCWnjhkZwfnOS5KRgkQ%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Italy</h2>
+        <p><b>President:</b> Sergio Mattarella<br>
+<b>Prime Minister:</b> Giorgia Meloni<br>
+<b>Special:</b> Famous for its art, architecture, and cuisine.</p>
+ <a href="https://th.bing.com/th/id/OIP.PrpOb7cm8T3ixjnoJIvfigHaJM?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+ 
+
+    <section id="Kazakhstan">
+    <br><br>
+     <div class="card">
+<image src="https://www.advantour.com/img/kazakhstan/symbols/kazakhstan-flag_sm.jpg" style="Width:300px; height:200px;">
+        <h2>Kazakhstan</h2>
+        <p><b>President:</b> Kassym-Jomart Tokayev<br>
+<b>Prime Minister:</b> Alikhan Smailov<br>
+<b>Special:</b> Known for its vast steppe and rich natural resources.</p>
+ <a href="https://th.bing.com/th/id/R.e8a7071201ad310159c2e226c2adbc2e?rik=EZXUUrM3TJkidA&riu=http%3a%2f%2fgeology.com%2fworld%2fkazakhstan-map.gif&ehk=VgW2BhgfeKQkgUQjfWe4H0Y%2fhT%2bW6jZTHTpD4gxoycg%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Kosovo">
+    <br><br>
+     <div class="card">
+<image src="https://i.pinimg.com/originals/f6/6d/1c/f66d1c95c329942c3e7f8f290fa9f922.jpg" style="Width:300px; height:200px;">
+        <h2>Kosovo</h2>
+        <p><b>President:</b> Vjosa Osmani<br>
+<b>Prime Minister:</b> Albin Kurti<br>
+<b>Special:</b> Known for its recent independence and rich cultural history.</p>
+ <a href="https://th.bing.com/th/id/R.a8906e4f6d0c67ec2c39538e07f0f91f?rik=mamDCFcfs%2bFguA&riu=http%3a%2f%2fwww.ezilon.com%2fmaps%2fimages%2feurope%2fpolitical-map-of-Kosovo.gif&ehk=AXkCorJ5w8gFvYLdO7WgMX5h5T8J8VdGtl8oiOcSMYU%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Latvia">
+    <br><br>
+     <div class="card">
+<image src="https://c4.wallpaperflare.com/wallpaper/1004/683/584/flag-latvia-latvia-wallpaper-preview.jpg" style="Width:300px; height:200px;">
+        <h2>Latvia</h2>
+        <p><b>President:</b> Edgars Rinkēvičs<br>
+<b>Prime Minister:</b> Krišjānis Kariņš<br>
+<b>Special:</b> Known for its Baltic coastline and medieval towns.</p>
+ <a href="https://th.bing.com/th/id/OIP.kcn521TfEFxTzvKQ7CaPnwHaFf?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Liechtenstein">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.ExLew4cbAOxrWEU_knSNwwAAAA?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Liechtenstein</h2>
+        <p><b>Prince:</b> Hans-Adam II<br>
+<b>Prime Minister:</b> Daniel Risch<br>
+<b>Special:</b> Known for its small size and being one of the wealthiest countries.</p>
+ <a href="https://th.bing.com/th/id/R.2c9a4aae5ef57fb07bce8f4328a2aa33?rik=7PnsrIVy5vzimw&riu=http%3a%2f%2fwww.mappery.com%2fmaps%2fLiechtenstein-Tourist-Map-3.png&ehk=REP9r7VdHK2pUlI8hp0y1S8qvgm9ca3M3byYQ2bgalE%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Lithuania">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.pgxU465xYOHPpHZmtXKatwHaEo?w=1680&h=1050&rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Lithuania</h2>
+        <p><b>President:</b> Gitanas Nausėda<br>
+<b>Prime Minister:</b> Ingrida Šimonytė<br>
+<b>Special:</b> Known for its historical sites and being one of the Baltic States.</p>
+ <a href="https://th.bing.com/th/id/OIP.osu-Yttiayn-WyIoO-SqawHaF-?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Luxembourg">
+    <br><br>
+     <div class="card">
+<image src="https://images.indiancountryextension.org/how-do-you-say-happy-new-year-in-navajo-.jpg" style="Width:300px; height:200px;">
+        <h2>Luxembourg</h2>
+        <p><b>Grand Duke:</b> Henri<br>
+<b>Prime Minister:</b> Xavier Bettel<br>
+<b>Special:</b> Known for its wealth and being a financial hub.</p>
+ <a href="https://www.worldatlas.com/r/w1200/upload/5b/97/03/cantons-of-luxembourg-map.png" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Malta">
+    <br><br>
+     <div class="card">
+<image src="https://img.freepik.com/premium-photo/malta-country-flag-wavy-silk-fabric-background-panorama-illustration_532963-1184.jpg" style="Width:300px; height:200px;">
+        <h2>Malta</h2>
+        <p><b>President:</b> Robert Abela<br>
+<b>Prime Minister:</b> (President is head of state and government)<br>
+<b>Special:</b> Known for its Mediterranean history and beautiful islands.</p>
+ <a href="https://th.bing.com/th/id/OIP.Y9YgrpL7MQAimRyGBTitHgHaGY?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Moldova">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.10757c87cf2ea8073175bb381fdd1bad?rik=2NXSye%2f1lclhag&riu=http%3a%2f%2frai-see.org%2fwp-content%2fuploads%2f2015%2f09%2fmoldova-flag.jpg&ehk=MLi1bAopOQoU6hjwBDr16Paqu0X9o0iVwvqFOzh9sHA%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Moldova</h2>
+        <p><b>President:</b> Maia Sandu<br>
+<b>Prime Minister:</b> Dorin Recean<br>
+<b>Special:</b> Known for its wine industry and rural charm.</p>
+ <a href="https://th.bing.com/th/id/R.3545b45bfd949a363f9b6611bb60f7cf?rik=blhSWfZGeWtA4Q&riu=http%3a%2f%2fwww.ezilon.com%2fmaps%2fimages%2feurope%2fpolitical-map-of-Moldova.gif&ehk=X3rZraAIKR0xphTr2BZlPe90R%2fD89Mdj1fwHHgxld3U%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Monaco">
+    <br><br>
+     <div class="card">
+<image src="https://img.freepik.com/premium-photo/monaco-country-flag-wavy-silk-fabric-background-panorama-illustration_532963-1191.jpg" style="Width:300px; height:200px;">
+        <h2>Monaco</h2>
+        <p><b>Prince:</b> Albert II<br>
+<b>Prime Minister:</b> (Prince is also head of government)<br>
+<b>Special:</b> Famous for its luxury, casinos, and the Monaco Grand Prix.</p>
+ <a href="https://th.bing.com/th/id/R.78be9592d25a53d44419c88cf6f3cb84?rik=LqOBPSyw%2fkNl3Q&riu=http%3a%2f%2fwww.carte-du-monde.net%2fcartes%2fmonaco.jpg&ehk=H8x6DJn1yUk8wa0WJH03zjvZdtk8JSvIflpDEa8zTTk%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Montenegro">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp4212962.jpg" style="Width:300px; height:200px;">
+        <h2>Montenegro</h2>
+        <p><b>President:</b> Jakov Milatović<br>
+<b>Prime Minister:</b> Dritan Abazović<br>
+<b>Special:</b> Known for its mountainous landscapes and Adriatic coastline.</p>
+ <a href="https://th.bing.com/th/id/R.22ff0030bf7334cd66f78f71bcc0eb7b?rik=ny1DHP827xgq%2fg&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2ff%2ff1%2fMontenegro_Map.png&ehk=hU5DFxLZb4HFi%2bc48ZEVyeKkTMoxKOZW4O4kaSOnTs8%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+ 
+
+    <section id="Netherlands">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.68c1f89580824172c6a6badad11fc33d?rik=kpNl2IHbuBLXxA&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2fnetherlands-flag-image.jpg&ehk=2emQmWw8s5a%2fe54drg2pgJ%2byMwCy8gpfwymIBEoO87g%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Netherlands</h2>
+        <p><b>King:</b> Willem-Alexander<br>
+<b>Prime Minister:</b> Mark Rutte<br>
+<b>Special:</b> Famous for its windmills, canals, and tulip fields.</p>
+ <a href="https://th.bing.com/th/id/R.c234a2df0ba8f084c74c11ae7602fcb6?rik=gD%2bDNsEnBM15Cg&riu=http%3a%2f%2fwww.nationsonline.org%2fmaps%2fnetherlands_map.jpg&ehk=zajhUq7bGMgnljatgXVlJxhjh14jiQsW85%2bNb4SXysw%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="North Macedonia">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapertag.com/wallpaper/middle/4/6/e/879931-albanian-flag-wallpaper-1920x1080-free-download.jpg" style="Width:300px; height:200px;">
+        <h2>North Macedonia</h2>
+        <p><b>President:</b> Stevo Pendarovski<br>
+<b>Prime Minister:</b> Dimitar Kovačevski<br>
+<b>Special:</b> Known for its ancient history and the capital Skopje.</p>
+ <a href="https://th.bing.com/th/id/OIP.p01p-UiApBFTiQkeWuIdoQHaFl?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Norway">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.uQIWwCJoJAPAIpcH1-uZ6wHaEK?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Norway</h2>
+        <p><b>King:</b> Harald V<br>
+<b>Prime Minister:</b> Jonas Gahr Støre<br>
+<b>Special:</b> Known for its stunning fjords and Viking history.</p>
+ <a href="https://th.bing.com/th/id/OIP.7mvyByspWKvIfSjxBO-jiAHaHq?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Poland">
+    <br><br>
+     <div class="card">
+<image src="https://img.freepik.com/premium-photo/poland-country-flag-wavy-silk-fabric-background-panorama-illustration_532963-1213.jpg" style="Width:300px; height:200px;">
+        <h2>Poland</h2>
+        <p><b>President:</b> Andrzej Duda<br>
+<b>Prime Minister:</b> Mateusz Morawiecki<br>
+<b>Special:</b> Famous for its medieval castles and the history of WWII.</p>
+ <a href="https://ichef.bbci.co.uk/news/1024/cpsprodpb/5939/production/_87514822_poland_map.gif" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Portugal">
+    <br><br>
+     <div class="card">
+<image src="https://tiermaker.com/images/templates/cidades-de-portugal-1662095/16620951650491609.jpg" style="Width:300px; height:200px;">
+        <h2>Portugal</h2>
+        <p><b>President:</b> Marcelo Rebelo de Sousa<br>
+<b>Prime Minister:</b> António Costa<br>
+<b>Special:</b> Known for its wine (especially Port), coastline, and historic sites.</p>
+ <a href="https://th.bing.com/th/id/OIP.znOubqvJW6qBZpc23kDGYwAAAA?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+    <section id="Romania">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/OIP.WJkYOIvj-tzi3OFK462kBwAAAA?rs=1&pid=ImgDetMain" style="Width:300px; height:200px;">
+        <h2>Romania</h2>
+        <p><b>President:</b> Klaus Iohannis<br>
+<b>Prime Minister:</b> Marcel Ciolacu<br>
+<b>Special:</b> Famous for its medieval castles, including Bran Castle (Dracula’s Castle).</p>
+ <a href="https://th.bing.com/th/id/OIP.zVOukZ0ftoGP5bB9fvS9_QHaFb?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Russia">
+    <br><br>
+     <div class="card">
+<image src="https://kcsgroup.com/wp-content/uploads/2017/05/Russian-Flag.jpg" style="Width:300px; height:200px;">
+        <h2>Russia</h2>
+        <p><b>President:</b> Vladimir Putin<br>
+<b>Prime Minister:</b> Mikhail Mishustin<br>
+<b>Special:</b> Known for its vast size, rich history, and political influence.</p>
+ <a href="https://russiamap360.com/img/0/russia-political-map.jpg" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="San Marino">
+    <br><br>
+     <div class="card">
+<image src="https://www.motosha.com/files/preview/2001x1501/11630621750yjlmpzdaiyuqdkzzwk1ypt6jwpqsdsemqfk1bbmejsypff4v5cynlvtbipjuddvkkk3xmydc6ls71grxift7fuviovlo941mmldi.jpg" style="Width:300px; height:200px;">
+        <h2>San Marino</h2>
+        <p><b>Captains Regent:</b> (The country's co-heads of state)<br>
+<b>Prime Minister:</b> (No official Prime Minister, government led by two Captains Regent)<br>
+<b>Special:</b> Known for being one of the world's smallest countries, completely surrounded by Italy.</p>
+ <a href="https://th.bing.com/th/id/OIP.NNkEV3HyuIzDmHvbAGmb2wHaHa?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Serbia">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp7318597.jpg" style="Width:300px; height:200px;">
+        <h2>Serbia</h2>
+        <p><b>President:</b> Aleksandar Vučić<br>
+<b>Prime Minister:</b> Ana Brnabić<br>
+<b>Special:</b> Known for its vibrant culture and historical sites.</p>
+ <a href="https://th.bing.com/th/id/R.93d87c31ba646916f2193daf72a0b0ff?rik=rOmwm6gWfGBDvg&riu=http%3a%2f%2fwww.globalsecurity.org%2fmilitary%2fworld%2fserbia%2fimages%2fmap-yugoslavia-political-1996.jpg&ehk=apYJG1kOQGP%2fstpqtfhvwa70Hu15k4mweFql6w0Wz58%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+
+
+    <section id="Slovakia">
+    <br><br>
+     <div class="card">
+<image src="https://th.bing.com/th/id/R.da799aeddc66fc23355b3cab5c7d2ab1?rik=WgwudH0TD%2fAywg&riu=http%3a%2f%2fwww.zastavki.com%2fpictures%2foriginals%2f2013%2fBackgrounds__040953_.jpg&ehk=ZHztNxJazd%2b1mV33WwaeTBhtfghHEoyuqY1WUr05k%2fE%3d&risl=&pid=ImgRaw&r=0" style="Width:300px; height:200px;">
+        <h2>Slovakia</h2>
+        <p><b>President:</b> Zuzana Čaputová<br>
+<b>Prime Minister:</b> Ľudovít Ódor<br>
+<b>Special:</b> Known for its medieval towns and castles.</p>
+ <a href="https://th.bing.com/th/id/R.7dc299fea19aa2d7c2dcdf530c46ddf6?rik=9pwxD8FR5wB84A&riu=http%3a%2f%2fwww.ezilon.com%2fmaps%2fimages%2feurope%2fphysical-map-of-Slovakia.gif&ehk=hD7r9KPR4DK6gTMjGnqY9tNkdauO1QQV7Swm1tNR2%2fs%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+     </div>
+    </section>
+ 
+
+    <section id="Slovenia">
+    <br><br>
+     <div class="card">
+<image src="https://wallpapercave.com/wp/wp2491949.jpg" style="Width:300px; height:200px;">
+        <h2>Slovenia</h2>
+        <p><b>President:</b> Nataša Pirc Musar<br>
+<b>Prime Minister:</b> Robert Golob<br>
+<b>Special:</b> Famous for its lakes, particularly Lake Bled, and its diverse landscape.</p>
+ <a href="https://th.bing.com/th/id/OIP.148MZve29a7mbTnX47E5wwHaE_?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+     </div>
+    </section>
+    <footer>
+        <p>&copy; 2024-25 YTechArt. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const items = [
+            { name: "Albania", id: "Albania" },
+            { name: "Andorra", id: "Andorra" },
+            { name: "Armenia", id: "Armenia" },
+            { name: "Austria", id: "Austria" },
+            { name: "Azerbaijan", id: "Azerbaijan" },
+            { name: "Belarus", id: "Belarus" },
+            { name: "Belgium", id: "Belgium" },
+            { name: "Bosnia and Herzegovina", id: "Bosnia and Herzegovina" },
+            { name: "Bulgaria", id: "Bulgaria" },
+            { name: "Croatia", id: "Croatia" },
+            { name: "Cyprus", id: "Cyprus" },
+            { name: "Czech Republic (Czechia)", id: "Czech Republic (Czechia)" },
+            { name: "Denmark", id: "Denmark" },
+            { name: "Estonia", id: "Estonia" },
+            { name: "Finland", id: "Finland" },
+            { name: "France", id: "France" },
+            { name: "Georgia", id: "Georgia" },
+            { name: "Germany", id: "Germany" },
+            { name: "Greece", id: "Greece" },
+            { name: "Hungary", id: "Hungary" },
+            { name: "Iceland", id: "Iceland" },
+            { name: "Ireland", id: "Ireland" },
+            { name: "Italy", id: "Italy" },
+            { name: "Kazakhstan", id: "Kazakhstan" },
+            { name: "Kosovo", id: "Kosovo" },
+            { name: "Latvia", id: "Latvia" },
+            { name: "Liechtenstein", id: "Liechtenstein" },
+            { name: "Lithuania", id: "Lithuania" },
+            { name: "Luxembourg", id: "Luxembourg" },
+            { name: "Malta", id: "Malta" },
+            { name: "Moldova", id: "Moldova" },
+            { name: "Monaco", id: "Monaco" },
+            { name: "Montenegro", id: "Montenegro" },
+            { name: "Netherlands", id: "Netherlands" },
+            { name: "North Macedonia", id: "North Macedonia" },
+            { name: "Norway", id: "Norway" },
+            { name: "Poland", id: "Poland" },
+            { name: "Portugal", id: "Portugal" },
+            { name: "Romania", id: "Romania" },
+            { name: "Russia", id: "Russia" },
+            { name: "San Marino", id: "San Marino" },
+            { name: "Serbia", id: "Serbia" },
+            { name: "Slovakia", id: "Slovakia" },
+            { name: "Slovenia", id: "Slovenia" }
+        ];
+function openNav() {
+    document.getElementById("navOverlay").style.width = "500px";
+}
+
+function closeNav() {
+    document.getElementById("navOverlay").style.width = "0";
+}
+        function searchItems() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filteredItems = items.filter(item => item.name.toLowerCase().includes(query));
+
+            displayResults(filteredItems);
+        }
+
+        function displayResults(results) {
+            const resultContainer = document.getElementById('searchResults');
+            resultContainer.innerHTML = ''; // Clear previous results
+
+            if (results.length === 0) {
+                resultContainer.innerHTML = '<p>No results found</p>';
+            } else {
+                results.forEach(result => {
+                    const div = document.createElement('div');
+                    div.classList.add('result');
+
+                    const link = document.createElement('a');
+                    link.href = `#${result.id}`; // Anchor link to the section ID
+                    link.textContent = result.name; // Link text
+
+                    div.appendChild(link);
+                    resultContainer.appendChild(div);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
